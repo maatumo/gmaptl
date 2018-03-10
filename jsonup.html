@@ -37,7 +37,7 @@
    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.14/angular.min.js"></script>
 
    <!-- controller -->
-   <script src="js/test.js"></script>
+   <script src="js/help.js"></script>
 
     <style type="text/css">
       /*#map { height: 600px; }*/
@@ -59,24 +59,25 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">天草実験</a>
+                <a class="navbar-brand" href="index.html">gmaptl</a>
             </div>
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav">
                 <!-- icons http://fontawesome.io/icons/-->
-                    <li class="active">
-                        <a href="index.html"><i class="fa fa-fw fa-plane"></i>ドローン＆ヘリマップ</a>
+                    <li>
+                        <a href="index.html"><i class="fa fa-fw fa-plane"></i>マップ</a>
                     </li>
                     <li>
-                        <a href="mydrone.html"><i class="fa fa-fw fa-cog"></i> パイロット向けマップ</a>
+                        <a href="jsonup.html"><i class="fa fa-fw fa-cog"></i>json入力</a>
                     </li>
-                    <li>
+<!--                     <li>
                         <a href="alerts.html"><i class="fa fa-fw fa-exclamation-triangle"></i> Alerts</a>
                     </li>
-                    <li>
+ -->
+ <!--                     <li class="active">
                         <a href="help.html"><i class="fa fa-fw fa-comment-o"></i> Help</a>
                     </li>
-
+ -->
 -->                </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -85,31 +86,23 @@
         <div id="page-wrapper">
 
             <div class="container-fluid">
-                            <div class="row">
+                <!-- Flot Charts -->
+
+                <div class="row">
                     <div class="col-lg-12">
-                        <br>
-                        <input type="button" style="width : 100%" value="飛行を開始します" onclick="OnButtonClick();"/><br />
-                        <ol class="breadcrumb" style="background-color: #55bbff" id="alertText">
-                        Safe Flight
-                        </ol>
+                        <h2 class="page-header">Jsonを入力</h2>
+                    </div>
+                    <div id="answer"></div>
+                </div>
+
+                <!-- /.row -->
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h2 class="page-header">情報</h2>
+                        <p class="lead"></p>
                     </div>
                 </div>
-                <div id="testtext">
-                </div>
-                <div id="map" style="width:100%; height:700px"></div>
-                <!-- AIzaSyCdPswDXV9ogiCp3fituxz1TSQ46OtNjuw -->
-                <br />
 
-
-
-                        <br>
-                           <br>
-                            <form name="test">
-<!--ファイルの初期化のためspanをいれた http://www.ilovex.co.jp/blog/system/cat818/javascriptfile.html -->
-                                <span id="span1"><input type="file" id="selfile"></span>
-                                <div id="res">[option] mission planner cooperation file</div>
-                            </form>
-                             <input type="button" value="Init File" onClick="initFile()">                        
             </div>
             <!-- /.container-fluid -->
         </div>
