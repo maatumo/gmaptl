@@ -17,6 +17,9 @@ var marker = [];
 var infoWindow = [];
 var markerData = [];
 
+var locationJson;
+var locationCoordinates=[];
+
 // Maps
 var map;
 var tokyo;
@@ -42,4 +45,31 @@ dataStore.child('key').on('child_added',function(dataSnapShot){
 	scriptElement.src = src ;
 	document.getElementsByTagName('head')[0].appendChild(scriptElement);
 });
+
+function getValue(idname){
+  // value値を取得する
+  var result = document.getElementById(idname).value;
+  locationJson= JSON.parse(result);
+  // Alertで表示する
+  alert("取得成功");
+}
+
+
+function addLines(){
+
+	for(let i in locationJson.locations){
+	    console.log(locationJson.locations[i].timestampMs);
+	    locationCoordinates.push({lat: locationJson.locations[i].latitudeE7*0.0000001, lng: locationJson.locations[i].longitudeE7*0.0000001});
+	}
+
+    var flightPath = new google.maps.Polyline({
+          path: locationCoordinates,
+          geodesic: true,
+          strokeColor: '#ff0000',
+          strokeOpacity: 0.8,
+          strokeWeight: 0.3
+        });
+    flightPath.setMap(map);
+
+}
 
